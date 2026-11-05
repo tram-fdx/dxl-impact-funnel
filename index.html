@@ -131,7 +131,7 @@ const T = {
     en: (m) => `<b>Short verdict:</b> marketing can currently <b>directly prove only ${m.onlineLeads} online contact(s)</b> in 28 days (of ${m.allLeads} new contacts, ${m.pctOnline}). Almost all revenue comes from <b>sales-led outbound</b> (${m.won4} deals won, ${m.wonAmt4} in the last 4 weeks). ${m.link ? m.link + ' of ' + m.tests + ' weekly tests exceed the noise threshold (see the correlation table); with that many tests a few chance hits are expected — correlation, not causation.' : 'Weekly data shows <b>no stable link</b> between marketing views/interactions and deals/meetings — correlation, not causation.'}`
   },
   per: {vi:(d)=>`Cập nhật ${d} · HubSpot (read-only) + 3 báo cáo marketing · đơn vị AUD · tuần bắt đầu thứ Hai`, en:(d)=>`Updated ${d} · HubSpot (read-only) + 3 marketing reports · AUD · weeks start Monday`},
-  k_reach:{vi:'Tiếp cận 28 ngày',en:'Reach, 28 days'}, k_reach_c:{vi:'FB+IG+YT lượt xem + LinkedIn impressions (không phải người duy nhất)',en:'FB+IG+YT views + LinkedIn impressions (not unique people)'},
+  k_reach:{vi:'Tiếp cận 28 ngày',en:'Reach, 28 days'}, k_reach_c:{vi:'FB+IG+YT lượt xem + LinkedIn impressions (không phải người duy nhất)',en:'FB+IG+YT views (+ LinkedIn impressions only when read that day; not unique people)'},
   k_sess:{vi:'Phiên website 28 ngày',en:'Website sessions, 28d'}, k_sess_c:{vi:(e)=>`GA4 · ${e} key event`,en:(e)=>`GA4 · ${e} key events`},
   k_lead:{vi:'Contact online mới 28 ngày',en:'New online contacts, 28d'}, k_lead_c:{vi:(a)=>`trên ${a} contact mới trong HubSpot`,en:(a)=>`of ${a} new HubSpot contacts`},
   k_deals:{vi:'Deal mới / thắng (4 tuần)',en:'Deals created / won (4 wks)'}, k_deals_c:{vi:(a)=>`Pipeline New Work Flow · thắng ${a}`,en:(a)=>`New Work Flow pipeline · won value ${a}`},
@@ -140,7 +140,7 @@ const T = {
   a_sub:{vi:'Cửa sổ 28 ngày gần nhất. Độ dài thanh theo thang log vì chênh lệch rất lớn. Mỗi bước là một nguồn đo khác nhau nên tỉ lệ chỉ để so sánh sơ bộ.',en:'Latest 28-day window. Bar length is log-scaled because the gaps are huge. Each step is a different measurement source, so ratios are indicative only.'},
   b_title:{vi:'Làn B — Outbound được marketing hỗ trợ',en:'Lane B — Outbound supported by marketing'},
   b_sub:{vi:'Pipeline đang chạy “New Work Flow”: số deal đang mở theo bước (giá trị AUD), và kết quả đóng trong 4 tuần gần nhất. Marketing đóng vai trò “air cover”, chưa gắn nguồn vào deal.',en:'Live “New Work Flow” pipeline: open deals by stage (AUD value) and results closed in the last 4 weeks. Marketing acts as “air cover”; it is not attributed to deals.'},
-  s_reach:{vi:'Tiếp cận',en:'Reach'}, s_reach_s:{vi:'FB+IG+YT views, LI impressions',en:'FB+IG+YT views, LI impressions'},
+  s_reach:{vi:'Tiếp cận',en:'Reach'}, s_reach_s:{vi:'FB+IG+YT views (+ LI impressions when read)',en:'FB+IG+YT views (+ LI impressions when read)'},
   s_sess:{vi:'Truy cập website',en:'Website visits'}, s_sess_s:{vi:'GA4 sessions',en:'GA4 sessions'},
   s_key:{vi:'Hành động trên web',en:'Actions on site'}, s_key_s:{vi:'GA4 key events (form, liên hệ)',en:'GA4 key events (forms, contact)'},
   s_lead:{vi:'Contact online mới',en:'New online contacts'}, s_lead_s:{vi:'HubSpot, nguồn khác Offline, 28 ngày',en:'HubSpot, source ≠ Offline, 28 days'},
@@ -167,8 +167,8 @@ const T = {
   wc:{vi:['Tuần','Views FB+IG','Visits FB','Contact mới','Deal mới','Meeting','Thắng','Giá trị thắng','Thua','Thắng %'],en:['Week','FB+IG views','FB visits','New contacts','Deals created','Meetings','Won','Won value','Lost','Win %']},
   n_title:{vi:'Ghi chú phương pháp & cảnh báo dữ liệu',en:'Method notes & data warnings'},
   notes:{
-    vi:['Toàn bộ deal HubSpot được coi là FeelDX (theo bạn xác nhận). Marketing DXL được đọc như “air cover”, không gắn trực tiếp vào deal.','Hai pipeline được ghép theo lựa chọn của bạn khi tính deal đóng theo tuần. Deal mới tạo trong 13 tuần chỉ thuộc “New Work Flow”; pipeline “Deal Records History” không nhận deal mới từ 10/2025.','Meeting là số hoạt động meeting trong HubSpot (mọi nguồn, chủ yếu do sales), không phải meeting do marketing tạo ra.','Lượt xem các kênh không phải người duy nhất; GA4/GSC/Meta/YouTube/LinkedIn dùng cửa sổ 28 ngày hơi lệch nhau vài ngày.','Tương quan trên 13 tuần là mẫu nhỏ: dùng để quan sát, không dùng để kết luận nhân quả.'],
-    en:['All HubSpot deals are treated as FeelDX (as you confirmed). DXL marketing is read as “air cover”, not attributed to deals.','The two pipelines are merged when counting closed deals per week, as you chose. Deals created in the last 13 weeks all belong to “New Work Flow”; “Deal Records History” has had no new deals since Oct 2025.','Meetings are all HubSpot meeting activities (any source, mostly sales-driven), not meetings created by marketing.','Channel views are not unique people; GA4/GSC/Meta/YouTube/LinkedIn 28-day windows are offset by a few days.','Correlation over 13 weeks is a small sample: observe with it, do not infer causation.']
+    vi:['Từ 08/10/2026 trang này là góc nhìn DXL: HubSpot chưa chứa dữ liệu DXL (đã kiểm tra lại 05/11: 0 contact có thuộc tính dxl_*), nên mọi chỉ số HubSpot là null, không phải 0.','Phần marketing (Social tuần, GA4, GSC, Ahrefs) lấy từ rollup của các báo cáo, đến hết 03/11/2026; tuần cuối là tuần chưa đủ 7 ngày (dấu *).','Các ô tương quan cần dữ liệu HubSpot nên để trống cho tới khi HubSpot có dữ liệu DXL.'],
+    en:['Since 8 Oct 2026 this page is the DXL view: HubSpot holds no DXL data (re-checked 5 Nov: 0 contacts with any dxl_* property), so every HubSpot metric is null, not zero.','The marketing side (weekly Social, GA4, GSC, Ahrefs) comes from the report rollups, up to 3 Nov 2026; the last week is partial (marked *).','Correlation cells need HubSpot data and stay blank until HubSpot holds DXL records.']
   },
   foot:{vi:(g)=>`Trang này được dựng lại từ data/funnel.json (${g}). Không sửa tay — nguồn gốc là data/hubspot/*.json và 3 file rollup.`,en:(g)=>`Rebuilt from data/funnel.json (${g}). Do not hand-edit — sources are data/hubspot/*.json and the Social/SEO rollup files.`}
 };
@@ -206,21 +206,21 @@ function render() {
   const last4 = W.slice(-5, -1); // last 4 complete weeks (final week is partial)
   const sum = (a, f) => a.reduce((s, x) => s + (f(x) || 0), 0);
   const won4 = sum(last4, w => w.hs.won), wonAmt4 = sum(last4, w => w.hs.won_amt), lost4 = sum(last4, w => w.hs.lost), created4 = sum(last4, w => w.hs.deals_created);
-  const w28 = d.window28, src28 = d.contacts_28d_by_source;
+  const w28 = d.window28, src28 = d.contacts_28d_by_source || {}; const NOHS = !d.pipeline_totals;
   const allLeads = Object.values(src28).reduce((s, v) => s + v, 0), onlineLeads = Object.entries(src28).filter(([k]) => k !== 'OFFLINE').reduce((s, [, v]) => s + v, 0);
   const reach = w28.social_views ? w28.social_views.v : null;
   const sess = w28.ga4_sessions && w28.ga4_sessions.v, key = w28.ga4_key_events && w28.ga4_key_events.v;
-  const dealOnline = Object.entries(d.deal_source_total).filter(([k]) => k !== 'OFFLINE' && k !== 'UNASSIGNED').reduce((s, [, v]) => s + v, 0);
+  const dealOnline = Object.entries(d.deal_source_total || {}).filter(([k]) => k !== 'OFFLINE' && k !== 'UNASSIGNED').reduce((s, [, v]) => s + v, 0);
 
   document.documentElement.lang = LANG;
   $('t_title').textContent = tr('title'); $('t_per').textContent = tr('per', d.as_of);
-  $('verdict').innerHTML = tr('verdict', {onlineLeads: fmt(onlineLeads), allLeads: fmt(allLeads), pctOnline: pct(onlineLeads, allLeads), won4: fmt(won4), wonAmt4: aud(wonAmt4), link: d.correlations.reduce((s, c) => s + (Math.abs(c.lag0.r || 0) >= 0.55) + (Math.abs(c.lag1.r || 0) >= 0.55), 0), tests: d.correlations.length * 2});
+  $('verdict').innerHTML = NOHS ? (LANG === 'vi' ? 'HubSpot hiện <b>chưa có dữ liệu DXL</b> (0 contact có thuộc tính dxl_*, deal không có trường phân biệt DXL), nên mọi chỉ số HubSpot để trống (—), không phải 0. Chỉ phần marketing (Social, SEO, GA4) được cập nhật.' : 'HubSpot currently holds <b>no DXL data</b> (0 contacts with any dxl_* property, no DXL discriminator on deals), so every HubSpot metric is blank (—), not zero. Only the marketing side (Social, SEO, GA4) is updated.') : tr('verdict', {onlineLeads: fmt(onlineLeads), allLeads: fmt(allLeads), pctOnline: pct(onlineLeads, allLeads), won4: fmt(won4), wonAmt4: aud(wonAmt4), link: d.correlations.reduce((s, c) => s + (Math.abs(c.lag0.r || 0) >= 0.55) + (Math.abs(c.lag1.r || 0) >= 0.55), 0), tests: d.correlations.length * 2});
 
   const k = [
     ['k_reach', fmt(reach), tr('k_reach_c'), ''], ['k_sess', fmt(sess), tr('k_sess_c', fmt(key)), ''],
-    ['k_lead', fmt(onlineLeads), tr('k_lead_c', fmt(allLeads)), 'hs'],
-    ['k_deals', fmt(created4) + ' / ' + fmt(won4), tr('k_deals_c', aud(wonAmt4)), 'hs'],
-    ['k_win', pct(won4, won4 + lost4), tr('k_win_c'), 'hs']
+    ['k_lead', NOHS ? '—' : fmt(onlineLeads), tr('k_lead_c', fmt(allLeads)), 'hs'],
+    ['k_deals', NOHS ? '—' : fmt(created4) + ' / ' + fmt(won4), tr('k_deals_c', aud(wonAmt4)), 'hs'],
+    ['k_win', NOHS ? '—' : pct(won4, won4 + lost4), tr('k_win_c'), 'hs']
   ];
   $('kpis').innerHTML = k.map(x => `<div class="kpi ${x[3]}"><div class="l">${tr(x[0])}</div><div class="v">${x[1]}</div><div class="c">${x[2]}</div></div>`).join('');
 
@@ -233,9 +233,9 @@ function render() {
   }).join('') + `<div class="step"><div class="nm">${LANG === 'vi' ? 'Meeting từ marketing' : 'Marketing-sourced meetings'}</div><div class="na">${tr('notmeasured')}</div><div></div></div>`;
 
   $('b_title').textContent = tr('b_title'); $('b_sub').textContent = tr('b_sub');
-  const op = d.open_pipeline, mxo = Math.max(...op.map(s => s.n), won4);
+  const op = (d.open_pipeline && d.open_pipeline.length >= 4) ? d.open_pipeline : [0,1,2,3].map(() => ({n: null, amount: null})), mxo = Math.max(...op.map(s => s.n || 0), won4, 1);
   const B = [['s_b6', op[0]], ['s_b3', op[1]], ['s_b2', op[2]], ['s_b1', op[3]]];
-  $('funB').innerHTML = B.map(([nm, s]) => `<div class="step"><div class="nm">${tr(nm)}<small>${fmt(s.n)} ${tr('open')}</small></div><div><div class="bar" style="width:${Math.max(3, 100 * s.n / mxo)}%;background:var(--hs)"><span>${fmt(s.n)}</span></div></div><div class="cv"><b>${aud(s.amount)}</b></div></div>`).join('')
+  $('funB').innerHTML = B.map(([nm, s]) => `<div class="step"><div class="nm">${tr(nm)}<small>${fmt(s.n)} ${tr('open')}</small></div><div><div class="bar" style="width:${Math.max(3, 100 * (s.n || 0) / mxo)}%;background:var(--hs)"><span>${fmt(s.n)}</span></div></div><div class="cv"><b>${aud(s.amount)}</b></div></div>`).join('')
     + `<div class="step"><div class="nm">${tr('s_won')}<small>${LANG === 'vi' ? 'đóng thắng' : 'closed won'}</small></div><div><div class="bar" style="width:${Math.max(3, 100 * won4 / mxo)}%;background:var(--pos)"><span>${fmt(won4)}</span></div></div><div class="cv"><b>${aud(wonAmt4)}</b></div></div>`;
 
   const wk = W.map(w => w.w);
@@ -248,11 +248,11 @@ function render() {
   $('lg2').innerHTML = `<span><i style="background:#5b6bf5"></i>${tr('lg_views')}</span><span><i style="background:#0f9d8a"></i>${tr('lg_val')}</span>`;
 
   $('h_title').textContent = tr('h_title'); $('h_sub').textContent = tr('h_sub');
-  const cs = d.contact_source_total, ds = d.deal_source_total, cT = Object.values(cs).reduce((s, v) => s + v, 0), dT = Object.values(ds).reduce((s, v) => s + v, 0);
+  const cs = d.contact_source_total || {}, ds = d.deal_source_total || {}, cT = Object.values(cs).reduce((s, v) => s + v, 0), dT = Object.values(ds).reduce((s, v) => s + v, 0);
   const H = [
-    [tr('h_c_off'), 100 * cs.OFFLINE / cT, pct(cs.OFFLINE, cT), 'var(--neg)'],
-    [tr('h_d_off'), 100 * ds.OFFLINE / dT, pct(ds.OFFLINE, dT), 'var(--neg)'],
-    [tr('h_d_un'), 100 * ds.UNASSIGNED / dT, pct(ds.UNASSIGNED, dT), 'var(--warn)'],
+    [tr('h_c_off'), cT ? 100 * cs.OFFLINE / cT : 0, pct(cs.OFFLINE, cT), 'var(--neg)'],
+    [tr('h_d_off'), dT ? 100 * ds.OFFLINE / dT : 0, pct(ds.OFFLINE, dT), 'var(--neg)'],
+    [tr('h_d_un'), dT ? 100 * ds.UNASSIGNED / dT : 0, pct(ds.UNASSIGNED, dT), 'var(--warn)'],
     [tr('h_ga'), key ? Math.min(100, 100 * onlineLeads / key) : 0, tr('h_ga_v', fmt(key), fmt(onlineLeads)), 'var(--mk)']
   ];
   $('health').innerHTML = H.map(h => `<div class="hrow"><div>${h[0]}</div><div class="track"><i style="width:${h[1]}%;background:${h[3]}"></i></div><div class="n">${h[2]}</div></div>`).join('');
@@ -268,8 +268,8 @@ function render() {
   $('w_title').textContent = tr('w_title'); $('w_sub').textContent = tr('w_sub');
   const wc = tr('wc');
   $('wk').innerHTML = `<tr>${wc.map(c => `<th>${c}</th>`).join('')}</tr>` + W.slice().reverse().map(w => {
-    const c = w.hs, wr = (c.won + c.lost) ? pct(c.won, c.won + c.lost) : '—';
-    return `<tr><td>${w.w}${w.mkt_days < 7 ? '*' : ''}</td><td>${fmt(w.mkt.views)}</td><td>${fmt(w.mkt.fb_visits)}</td><td>${fmt(c.contacts_offline + c.contacts_direct)}</td><td>${fmt(c.deals_created)}</td><td>${fmt(c.meetings)}</td><td>${fmt(c.won)}</td><td>${aud(c.won_amt)}</td><td>${fmt(c.lost)}</td><td>${wr}</td></tr>`;
+    const c = w.hs, wr = ((c.won || 0) + (c.lost || 0)) ? pct(c.won, (c.won || 0) + (c.lost || 0)) : '—';
+    return `<tr><td>${w.w}${w.mkt_days < 7 ? '*' : ''}</td><td>${fmt(w.mkt.views)}</td><td>${fmt(w.mkt.fb_visits)}</td><td>${fmt(c.contacts_offline == null && c.contacts_direct == null ? null : (c.contacts_offline || 0) + (c.contacts_direct || 0))}</td><td>${fmt(c.deals_created)}</td><td>${fmt(c.meetings)}</td><td>${fmt(c.won)}</td><td>${aud(c.won_amt)}</td><td>${fmt(c.lost)}</td><td>${wr}</td></tr>`;
   }).join('');
 
   $('n_title').textContent = tr('n_title');
