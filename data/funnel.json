@@ -1,11 +1,12 @@
 {
  "kind": "funnel",
  "derived": true,
- "generated_at": "2026-11-05T07:07:39Z",
- "as_of": "2026-11-05",
- "hubspot_provenance": "Re-checked live on 2026-11-05 via the HubSpot connector (read-only SQL): the DXL contact properties (dxl_project_type, dxl_project_stage...) exist but 0 contacts have a value, and deals have no DXL/FDX discriminator (only fdx_service). HubSpot therefore still holds NO DXL data, so every HubSpot funnel metric stays null (not zero), per the user instruction of 2026-10-08. Last week (2026-11-02) is partial.",
+ "generated_at": "2026-11-14T17:12:10Z",
+ "as_of": "2026-11-15",
+ "hubspot_provenance": "Automated read on 2026-11-15 via HubSpot CRM Search API (pipeline v1), DXL filters from config/hubspot.json.",
  "anomalies": [
-  "HubSpot has no DXL data yet - all HubSpot funnel metrics are null (not zero). Re-checked 2026-11-05: 0 contacts with any dxl_* property."
+  "HubSpot: 0 contacts match the DXL contact filter on 2026-11-15 - contact metrics stay null.",
+  "No DXL deal filter configured (deals have no DXL/FDX discriminator) - deal metrics are null."
  ],
  "weeks": [
   {
@@ -362,11 +363,11 @@
    "w": "2026-10-12",
    "mkt_days": 7,
    "mkt": {
-    "views": 1324,
+    "views": 1314,
     "fb_views": 818,
-    "ig_views": 506,
+    "ig_views": 496,
     "fb_visits": 236,
-    "interactions": 29,
+    "interactions": 32,
     "video3s": 109
    },
    "hs": {
@@ -387,11 +388,11 @@
    "w": "2026-10-19",
    "mkt_days": 7,
    "mkt": {
-    "views": 1575,
+    "views": 1377,
     "fb_views": 1167,
-    "ig_views": 408,
+    "ig_views": 210,
     "fb_visits": 191,
-    "interactions": 68,
+    "interactions": 121,
     "video3s": 106
    },
    "hs": {
@@ -412,11 +413,11 @@
    "w": "2026-10-26",
    "mkt_days": 7,
    "mkt": {
-    "views": 719,
+    "views": 585,
     "fb_views": 515,
-    "ig_views": 204,
+    "ig_views": 70,
     "fb_visits": 75,
-    "interactions": 19,
+    "interactions": 40,
     "video3s": 11
    },
    "hs": {
@@ -435,14 +436,39 @@
   },
   {
    "w": "2026-11-02",
-   "mkt_days": 2,
+   "mkt_days": 7,
    "mkt": {
-    "views": 453,
-    "fb_views": 299,
-    "ig_views": 154,
-    "fb_visits": 41,
-    "interactions": 13,
-    "video3s": 56
+    "views": 958,
+    "fb_views": 753,
+    "ig_views": 205,
+    "fb_visits": 129,
+    "interactions": 39,
+    "video3s": 148
+   },
+   "hs": {
+    "deals_created": null,
+    "deals_created_amt": null,
+    "won": null,
+    "won_amt": null,
+    "lost": null,
+    "lost_not_interested": null,
+    "lost_inhouse": null,
+    "lost_competitor": null,
+    "contacts_offline": null,
+    "contacts_direct": null,
+    "meetings": null
+   }
+  },
+  {
+   "w": "2026-11-09",
+   "mkt_days": 5,
+   "mkt": {
+    "views": 891,
+    "fb_views": 676,
+    "ig_views": 215,
+    "fb_visits": 47,
+    "interactions": 47,
+    "video3s": 60
    },
    "hs": {
     "deals_created": null,
@@ -461,21 +487,20 @@
  ],
  "window28": {
   "social_views": {
-   "d": "2026-11-05",
-   "v": 5728,
-   "li_included": false
+   "d": "2026-11-15",
+   "v": 5906
   },
   "fb_views": {
-   "d": "2026-11-05",
-   "v": 3485
+   "d": "2026-11-15",
+   "v": 3272
   },
   "ig_views": {
-   "d": "2026-11-05",
-   "v": 1464
+   "d": "2026-11-15",
+   "v": 836
   },
   "yt_views": {
-   "d": "2026-11-05",
-   "v": 779
+   "d": "2026-11-15",
+   "v": 530
   },
   "li_impressions": {
    "d": "2026-10-29",
@@ -486,36 +511,36 @@
    "v": 82
   },
   "fb_visits": {
-   "d": "2026-11-05",
-   "v": 613
+   "d": "2026-11-15",
+   "v": 485
   },
   "fb_interactions": {
-   "d": "2026-11-05",
-   "v": 96
+   "d": "2026-11-15",
+   "v": 204
   },
   "ga4_sessions": {
-   "d": "2026-11-04",
-   "v": 689
+   "d": "2026-11-15",
+   "v": 632
   },
   "ga4_users": {
-   "d": "2026-11-04",
-   "v": 452
+   "d": "2026-11-15",
+   "v": 481
   },
   "ga4_key_events": {
-   "d": "2026-11-04",
-   "v": 4
+   "d": "2026-11-15",
+   "v": 3
   },
   "gsc_clicks": {
-   "d": "2026-11-04",
-   "v": 24
+   "d": "2026-11-15",
+   "v": 23
   },
   "gsc_impressions": {
-   "d": "2026-11-04",
-   "v": 2368
+   "d": "2026-11-15",
+   "v": 3822
   },
   "ahrefs_ai_citations": {
-   "d": "2026-10-29",
-   "v": 29
+   "d": "2026-11-05",
+   "v": 27
   }
  },
  "correlations": [
@@ -645,7 +670,8 @@
   "2026-10-05",
   "2026-10-12",
   "2026-10-19",
-  "2026-10-26"
+  "2026-10-26",
+  "2026-11-02"
  ],
  "open_pipeline": [],
  "pipeline_totals": null,
@@ -693,13 +719,13 @@
    }
   },
   {
-   "date": "2026-10-08",
+   "date": "2026-11-05",
    "open_pipeline": [],
    "lifecycle": null,
    "contact_source_total": null
   },
   {
-   "date": "2026-11-05",
+   "date": "2026-11-15",
    "open_pipeline": [],
    "lifecycle": null,
    "contact_source_total": null

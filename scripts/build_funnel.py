@@ -60,7 +60,7 @@ for i, w in enumerate(hs['weeks']):
             'deals_created_amt': hs['deals_created']['amount'][i],
             'won': hs['deals_won']['n'][i],
             'won_amt': hs['deals_won']['amount'][i],
-            'lost': sum(hs['deals_lost'][k][i] for k in ('not_interested', 'inhouse', 'competitor', 'other')),
+            'lost': (lambda xs: None if all(x is None for x in xs) else sum(x or 0 for x in xs))([hs['deals_lost'][k][i] for k in ('not_interested', 'inhouse', 'competitor', 'other')]),
             'lost_not_interested': hs['deals_lost']['not_interested'][i],
             'lost_inhouse': hs['deals_lost']['inhouse'][i],
             'lost_competitor': hs['deals_lost']['competitor'][i],
@@ -88,8 +88,9 @@ def corr(mk, hk, lag):
         j = i + lag
         if j >= len(full):
             break
+        if r['mkt'][mk] is None or full[j]['hs'][hk] is None: continue
         xs.append(r['mkt'][mk]); ys.append(full[j]['hs'][hk])
-    return {'r': pearson(xs, ys), 'n': len(xs)}
+    return {'r': pearson(xs, ys) if len(xs) >= 3 else None, 'n': len(xs)}
 
 corrs = []
 for mk in ('views', 'fb_visits', 'interactions'):
