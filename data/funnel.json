@@ -1,7 +1,7 @@
 {
  "kind": "funnel",
  "derived": true,
- "generated_at": "2026-11-14T17:49:36Z",
+ "generated_at": "2026-11-15T02:27:04Z",
  "as_of": "2026-11-15",
  "hubspot_provenance": "Automated read on 2026-11-15 via HubSpot CRM Search API (pipeline v1), DXL filters from config/hubspot.json.",
  "anomalies": [
@@ -532,11 +532,11 @@
   },
   "gsc_clicks": {
    "d": "2026-11-15",
-   "v": 23
+   "v": 25
   },
   "gsc_impressions": {
    "d": "2026-11-15",
-   "v": 3822
+   "v": 4018
   },
   "ahrefs_ai_citations": {
    "d": "2026-11-05",
