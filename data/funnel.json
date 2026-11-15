@@ -1,7 +1,7 @@
 {
  "kind": "funnel",
  "derived": true,
- "generated_at": "2026-11-15T02:27:04Z",
+ "generated_at": "2026-11-15T15:21:41Z",
  "as_of": "2026-11-15",
  "hubspot_provenance": "Automated read on 2026-11-15 via HubSpot CRM Search API (pipeline v1), DXL filters from config/hubspot.json.",
  "anomalies": [
@@ -520,23 +520,23 @@
   },
   "ga4_sessions": {
    "d": "2026-11-15",
-   "v": 632
+   "v": 617
   },
   "ga4_users": {
    "d": "2026-11-15",
-   "v": 481
+   "v": 474
   },
   "ga4_key_events": {
    "d": "2026-11-15",
-   "v": 3
+   "v": 2
   },
   "gsc_clicks": {
    "d": "2026-11-15",
-   "v": 25
+   "v": 26
   },
   "gsc_impressions": {
    "d": "2026-11-15",
-   "v": 4018
+   "v": 4230
   },
   "ahrefs_ai_citations": {
    "d": "2026-11-05",
