@@ -1,7 +1,7 @@
 {
  "kind": "funnel",
  "derived": true,
- "generated_at": "2026-11-15T15:21:41Z",
+ "generated_at": "2026-11-15T16:41:46Z",
  "as_of": "2026-11-15",
  "hubspot_provenance": "Automated read on 2026-11-15 via HubSpot CRM Search API (pipeline v1), DXL filters from config/hubspot.json.",
  "anomalies": [
