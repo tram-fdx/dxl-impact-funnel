@@ -1,11 +1,11 @@
 {
  "kind": "funnel",
  "derived": true,
- "generated_at": "2026-11-21T03:48:03Z",
- "as_of": "2026-11-21",
- "hubspot_provenance": "Automated read on 2026-11-21 via HubSpot CRM Search API (pipeline v1), DXL filters from config/hubspot.json.",
+ "generated_at": "2026-11-22T02:52:45Z",
+ "as_of": "2026-11-22",
+ "hubspot_provenance": "Automated read on 2026-11-22 via HubSpot CRM Search API (pipeline v1), DXL filters from config/hubspot.json.",
  "anomalies": [
-  "HubSpot: 0 contacts match the DXL contact filter on 2026-11-21 - contact metrics stay null.",
+  "HubSpot: 0 contacts match the DXL contact filter on 2026-11-22 - contact metrics stay null.",
   "No DXL deal filter configured (deals have no DXL/FDX discriminator) - deal metrics are null."
  ],
  "weeks": [
@@ -486,14 +486,14 @@
   },
   {
    "w": "2026-11-16",
-   "mkt_days": 4,
+   "mkt_days": 5,
    "mkt": {
-    "views": 216,
-    "fb_views": 197,
-    "ig_views": 19,
-    "fb_visits": 22,
-    "interactions": 11,
-    "video3s": 10
+    "views": 470,
+    "fb_views": 386,
+    "ig_views": 84,
+    "fb_visits": 33,
+    "interactions": 12,
+    "video3s": 16
    },
    "hs": {
     "deals_created": null,
@@ -512,59 +512,59 @@
  ],
  "window28": {
   "social_views": {
-   "d": "2026-11-21",
-   "v": 4292
+   "d": "2026-11-22",
+   "v": 4365
   },
   "fb_views": {
-   "d": "2026-11-21",
-   "v": 2493
+   "d": "2026-11-22",
+   "v": 2522
   },
   "ig_views": {
-   "d": "2026-11-21",
-   "v": 604
+   "d": "2026-11-22",
+   "v": 648
   },
   "yt_views": {
-   "d": "2026-11-21",
+   "d": "2026-11-22",
    "v": 261
   },
   "li_impressions": {
-   "d": "2026-11-21",
+   "d": "2026-11-22",
    "v": 934
   },
   "li_page_views": {
-   "d": "2026-11-21",
+   "d": "2026-11-22",
    "v": 27
   },
   "fb_visits": {
-   "d": "2026-11-21",
-   "v": 361
+   "d": "2026-11-22",
+   "v": 350
   },
   "fb_interactions": {
-   "d": "2026-11-21",
-   "v": 138
+   "d": "2026-11-22",
+   "v": 124
   },
   "ga4_sessions": {
-   "d": "2026-11-21",
-   "v": 623
+   "d": "2026-11-22",
+   "v": 620
   },
   "ga4_users": {
-   "d": "2026-11-21",
-   "v": 507
+   "d": "2026-11-22",
+   "v": 505
   },
   "ga4_key_events": {
-   "d": "2026-11-21",
+   "d": "2026-11-22",
    "v": 3
   },
   "gsc_clicks": {
-   "d": "2026-11-21",
-   "v": 34
+   "d": "2026-11-22",
+   "v": 35
   },
   "gsc_impressions": {
-   "d": "2026-11-21",
-   "v": 4724
+   "d": "2026-11-22",
+   "v": 4904
   },
   "ahrefs_ai_citations": {
-   "d": "2026-11-21",
+   "d": "2026-11-22",
    "v": 33
   }
  },
@@ -788,6 +788,12 @@
   },
   {
    "date": "2026-11-21",
+   "open_pipeline": [],
+   "lifecycle": null,
+   "contact_source_total": null
+  },
+  {
+   "date": "2026-11-22",
    "open_pipeline": [],
    "lifecycle": null,
    "contact_source_total": null
