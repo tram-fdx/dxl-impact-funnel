@@ -100,6 +100,7 @@ def corr(mk, hk, lag):
         if r['mkt'][mk] is None or full[j]['hs'][hk] is None: continue
         if r['mkt'][mk] is None or full[j]['hs'][hk] is None: continue
         if r['mkt'][mk] is None or full[j]['hs'][hk] is None: continue
+        if r['mkt'][mk] is None or full[j]['hs'][hk] is None: continue
         xs.append(r['mkt'][mk]); ys.append(full[j]['hs'][hk])
     return {'r': pearson(xs, ys) if len(xs) >= 3 else None, 'n': len(xs)}
 
